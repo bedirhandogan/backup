@@ -8,12 +8,12 @@ import (
 	"strings"
 )
 
-func ValidateFormatMatch(time string) {
+func ValidateFormatMatch(duration string) {
 	pattern := `^d:\d+ h:\d+ m:\d+ s:\d+$`
 
 	re := regexp.MustCompile(pattern)
 
-	if !re.MatchString(time) {
+	if !re.MatchString(duration) {
 		fmt.Println("Specify time in wrong format.\n" + "Correct format: d:0 h:0 m:0 s:0")
 		os.Exit(2)
 	}
