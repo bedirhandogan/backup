@@ -6,15 +6,15 @@ import (
 
 var colors = map[string]string{
 	// regular
-	"black":  "\033[30m",
-	"red":    "\033[31m",
-	"green":  "\033[32m",
-	"yellow": "\033[33m",
-	"blue":   "\033[34m",
-	"purple": "\033[35m",
-	"cyan":   "\033[36m",
-	"white":  "\033[37m",
-	"gray":   "\033[90m",
+	"black":  "\033[0;30m",
+	"red":    "\033[0;31m",
+	"green":  "\033[0;32m",
+	"yellow": "\033[0;33m",
+	"blue":   "\033[0;34m",
+	"purple": "\033[0;35m",
+	"cyan":   "\033[0;36m",
+	"white":  "\033[0;37m",
+	"gray":   "\033[0;90m",
 
 	// background
 	"bgblack":  "\033[40m",
