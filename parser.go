@@ -19,10 +19,10 @@ func ValidateFormatMatch(duration string) {
 	}
 }
 
-func ParseTime(duration string) Duration {
+func ParseTime(duration string) TimePeriod {
 	ValidateFormatMatch(duration)
 
-	times := make(map[string]int)
+	tp := make(map[string]int)
 
 	parts := strings.Split(duration, " ") // [d:0 h:0 m:0 s:0]
 	for _, part := range parts {
@@ -34,15 +34,15 @@ func ParseTime(duration string) Duration {
 
 			valInt, err := strconv.Atoi(value) // convert int
 			if err == nil {
-				times[key] = valInt
+				tp[key] = valInt
 			}
 		}
 	}
 
-	return Duration{
-		Day:  times["d"],
-		Hour: times["h"],
-		Min:  times["m"],
-		Sec:  times["s"],
+	return TimePeriod{
+		Day:  tp["d"],
+		Hour: tp["h"],
+		Min:  tp["m"],
+		Sec:  tp["s"],
 	}
 }
