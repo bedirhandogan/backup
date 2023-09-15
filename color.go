@@ -28,15 +28,15 @@ var colors = map[string]string{
 	"bggray":   "\033[0;100m",
 
 	// bold
-	"bblack":  "\033[1;30m",
-	"bred":    "\033[1;31m",
-	"bgreen":  "\033[1;32m",
-	"byellow": "\033[1;33m",
-	"bblue":   "\033[1;34m",
-	"bpurple": "\033[1;35m",
-	"bcyan":   "\033[1;36m",
-	"bwhite":  "\033[1;37m",
-	"bgray":   "\033[1;90m",
+	"bblack":  "\033[0;1;30m",
+	"bred":    "\033[0;1;31m",
+	"bgreen":  "\033[0;1;32m",
+	"byellow": "\033[0;1;33m",
+	"bblue":   "\033[0;1;34m",
+	"bpurple": "\033[0;1;35m",
+	"bcyan":   "\033[0;1;36m",
+	"bwhite":  "\033[0;1;37m",
+	"bgray":   "\033[0;1;90m",
 
 	// underline
 	"ublack":  "\033[4;30m",
