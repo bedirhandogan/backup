@@ -39,6 +39,11 @@ func ParseTime(duration string) TimePeriod {
 		}
 	}
 
+	if tt := tp["d"] + tp["h"] + tp["m"] + tp["s"]; tt == 0 {
+		fmt.Println("Error: You did not specify a duration, please specify a duration.")
+		os.Exit(1)
+	}
+
 	return TimePeriod{
 		Day:  tp["d"],
 		Hour: tp["h"],
