@@ -17,15 +17,15 @@ var colors = map[string]string{
 	"gray":   "\033[0;90m",
 
 	// background
-	"bgblack":  "\033[40m",
-	"bgred":    "\033[41m",
-	"bggreen":  "\033[42m",
-	"bgyellow": "\033[43m",
-	"bgblue":   "\033[44m",
-	"bgpurple": "\033[45m",
-	"bgcyan":   "\033[46m",
-	"bgwhite":  "\033[47m",
-	"bggray":   "\033[100m",
+	"bgblack":  "\033[0;40m",
+	"bgred":    "\033[0;41m",
+	"bggreen":  "\033[0;42m",
+	"bgyellow": "\033[0;43m",
+	"bgblue":   "\033[0;44m",
+	"bgpurple": "\033[0;45m",
+	"bgcyan":   "\033[0;46m",
+	"bgwhite":  "\033[0;47m",
+	"bggray":   "\033[0;100m",
 
 	// bold
 	"bblack":  "\033[1;30m",
