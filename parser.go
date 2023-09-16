@@ -14,7 +14,7 @@ func ValidateFormatMatch(duration string) {
 	re := regexp.MustCompile(pattern)
 
 	if !re.MatchString(duration) {
-		fmt.Println("Specify time in wrong format.\n" + "Correct format: d:0 h:0 m:0 s:0")
+		fmt.Println(Color("%red Error: Specify time in wrong format. " + "%cyan Correct format: %gray d:0 h:0 m:0 s:0"))
 		os.Exit(2)
 	}
 }
