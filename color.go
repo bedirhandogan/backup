@@ -59,5 +59,5 @@ func Color(text string) string {
 		text = regexp.MustCompile(pattern).ReplaceAllString(text, value)
 	}
 
-	return text
+	return text + colors["reset"]
 }
