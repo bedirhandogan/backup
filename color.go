@@ -1,7 +1,7 @@
 package main
 
 import (
-	"strings"
+	"regexp"
 )
 
 var colors = map[string]string{
@@ -55,8 +55,8 @@ var colors = map[string]string{
 
 func Color(text string) string {
 	for key, value := range colors {
-		tk := strings.ToLower(key)
-		text = strings.ReplaceAll(text, "%"+tk, value)
+		pattern := "(?i)%" + key // yellow
+		text = regexp.MustCompile(pattern).ReplaceAllString(text, value)
 	}
 
 	return text
