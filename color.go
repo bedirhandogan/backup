@@ -55,7 +55,7 @@ var colors = map[string]string{
 
 func Color(text string) string {
 	for key, value := range colors {
-		pattern := "(?i)%" + key // yellow
+		pattern := `(?i)(%` + key + `)\s*` // yellow
 		text = regexp.MustCompile(pattern).ReplaceAllString(text, value)
 	}
 
