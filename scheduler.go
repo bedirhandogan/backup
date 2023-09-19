@@ -13,13 +13,12 @@ func TaskScheduler(callback Callback, day, hour, min, sec int) {
 	defer ticker.Stop()
 
 	for {
-		select {
-		case <-ticker.C:
-			err := callback()
+		<-ticker.C
 
-			if err != nil {
-				return
-			}
+		err := callback()
+
+		if err != nil {
+			return
 		}
 	}
 }
