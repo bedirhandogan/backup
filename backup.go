@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 )
 
@@ -42,7 +43,7 @@ func CopyDirectory(source, destination string) error {
 			return err
 		}
 
-		destinationPath := filepath.Join(destination, sourcePath[len(source):])
+		destinationPath := filepath.Join(destination, strings.TrimPrefix(sourcePath, source))
 
 		if info.IsDir() {
 			return os.MkdirAll(destinationPath, os.ModePerm)
