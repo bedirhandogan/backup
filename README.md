@@ -13,8 +13,8 @@ $ go run .
 ### Usage
 ```bash
 # usage
-$ go run . -source [source path] -destination [destination path] -time [backup duration]
+$ go run . -source [source path] -destination [destination path] -duration [backup duration]
 
 # back up every 1 day e.g
-$ go run . -source C:/Users/John/Project -destination C:/Users/John/Backup -time "d:1 h:0 m:0 s:0"
+$ go run . -source C:/Users/John/Project -destination C:/Users/John/Backup -duration "d:1 h:0 m:0 s:0"
 ```
