@@ -13,7 +13,7 @@ func main() {
 	flag.Parse()
 
 	if *source == "" || *destination == "" || *duration == "" {
-		fmt.Println(Color("%yellow Use: %reset go run . %gray -source %cyan [e.g: C:/Users/John/Project] %gray -destination %cyan [e.g: C:/Users/John/Backup] %gray -time %cyan [format: d:0 h:0 m:0 s:0]"))
+		fmt.Println(Color("%yellow Use: %reset go run . %gray -source %cyan [e.g: C:/Users/John/Project] %gray -destination %cyan [e.g: C:/Users/John/Backup] %gray -duration %cyan [format: d:0 h:0 m:0 s:0]"))
 		return
 	}
 
