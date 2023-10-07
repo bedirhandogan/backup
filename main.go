@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/bedirhandogan/color"
 	"os"
 )
 
@@ -13,17 +14,17 @@ func main() {
 	flag.Parse()
 
 	if *source == "" || *destination == "" || *duration == "" {
-		fmt.Println(Color("%yellow Use: %reset go run . %gray -source %cyan [e.g: C:/Users/John/Project] %gray -destination %cyan [e.g: C:/Users/John/Backup] %gray -duration %cyan [format: d:0 h:0 m:0 s:0]"))
+		fmt.Println(color.Colorize("%yellow Use: %reset  go run . %white40 -source %cyan [e.g: C:/Users/John/Project] %white40 -destination %cyan [e.g: C:/Users/John/Backup] %white40 -duration %cyan [format: d:0 h:0 m:0 s:0] %reset"))
 		return
 	}
 
 	if _, err := os.Stat(*source); os.IsNotExist(err) {
-		fmt.Printf(Color("%red Source: Could not find folder to copy. \n"))
+		fmt.Printf(color.Colorize("%red Source: Could not find folder to copy. \n %reset"))
 		return
 	}
 
 	if _, err := os.Stat(*destination); os.IsNotExist(err) {
-		fmt.Println(Color("%red Destination: The target folder to copy to was not found. \n"))
+		fmt.Println(color.Colorize("%red Destination: The target folder to copy to was not found. \n %reset"))
 		return
 	}
 

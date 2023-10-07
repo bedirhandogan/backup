@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/bedirhandogan/color"
 	"os"
 	"regexp"
 	"strconv"
@@ -14,7 +15,7 @@ func ValidateFormatMatch(duration string) {
 	re := regexp.MustCompile(pattern)
 
 	if !re.MatchString(duration) {
-		fmt.Println(Color("%red Error: Specify time in wrong format. " + "%cyan Correct format: %gray d:0 h:0 m:0 s:0"))
+		fmt.Println(color.Colorize("%red Error: Specify time in wrong format. " + "%cyan Correct format: %gray d:0 h:0 m:0 s:0 %reset"))
 		os.Exit(2)
 	}
 }
@@ -42,7 +43,7 @@ func ParseTime(duration string) TimePeriod {
 	}
 
 	if tt := tp["d"] + tp["h"] + tp["m"] + tp["s"]; tt == 0 {
-		fmt.Println(Color("%red Error: You did not specify a duration, please specify a duration."))
+		fmt.Println(color.Colorize("%red Error: You did not specify a duration, please specify a duration."))
 		os.Exit(1)
 	}
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/bedirhandogan/color"
 	"io"
 	"io/fs"
 	"os"
@@ -55,14 +56,14 @@ func CopyDirectory(source, destination string) error {
 
 func (b *Backup) Handler() {
 	// When the program runs
-	fmt.Println(Color("%bcyanThe program was run."))
+	fmt.Println(color.Colorize("%bold %cyanThe program was run. %reset"))
 
 	// Source and destination path
-	fmt.Printf(Color("%bcyan Source: %white %s \n"), b.Source)
-	fmt.Printf(Color("%bcyan Destination: %white %s \n"), b.Destination)
+	fmt.Printf(color.Colorize("%bold %cyan Source: %white %s \n %reset"), b.Source)
+	fmt.Printf(color.Colorize("%bold %cyan Destination: %white %s \n %reset"), b.Destination)
 
 	// Backup Duration
-	fmt.Printf(Color("%bcyan Duration: %white Day: %d, Hour: %d, Min: %d, Sec: %d \n"), b.Duration.Day, b.Duration.Hour, b.Duration.Min, b.Duration.Sec)
+	fmt.Printf(color.Colorize("%bold %cyan  Duration: %white Day: %d, Hour: %d, Min: %d, Sec: %d \n %reset"), b.Duration.Day, b.Duration.Hour, b.Duration.Min, b.Duration.Sec)
 
 	TaskScheduler(func() error {
 		now := time.Now()
@@ -72,11 +73,11 @@ func (b *Backup) Handler() {
 		s := now.Second() + b.Duration.Sec
 
 		if err := CopyDirectory(b.Source, b.Destination); err != nil {
-			fmt.Println(Color("%red An error occurred while copying. \n"))
+			fmt.Println(color.Colorize("%red An error occurred while copying. \n %reset"))
 			return err
 		}
 
-		fmt.Printf(Color("%green Your folder has been backed up successfully. Next Backup: %white %02d:%02d:%02d - %d.%d.%d \n"),
+		fmt.Printf(color.Colorize("%green Your folder has been backed up successfully. Next Backup: %white %02d:%02d:%02d - %d.%d.%d \n %reset"),
 			h, m, s, d, time.Now().Month(), time.Now().Year())
 
 		return nil
